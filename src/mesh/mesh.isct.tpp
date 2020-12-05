@@ -1106,7 +1106,7 @@ void Mesh<VertData,TriData>::IsctProblem::findIntersections()
     if(nTrys <= 0) {
         CORK_ERROR("Ran out of tries to perturb the mesh");
 		//std::logic_error
-		throw std::exception("Ran out of tries to perturb the mesh");
+		throw std::runtime_error("Ran out of tries to perturb the mesh");
         //exit(1);
     }
     
