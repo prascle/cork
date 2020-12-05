@@ -650,14 +650,14 @@ public:
 	// DGM: to replace lambda in IsctProblem constructor!
 	void quantizeVerts(const Quantization& quantizer)
 	{
-		if (!mesh)
+		if (!TopoCache::mesh)
 			return;
 
-		size_t N = mesh->verts.size();
+		size_t N = TopoCache::mesh->verts.size();
 		quantized_coords.resize(N);
 
 		uint write = 0;
-		for (Vptr v = verts.getFirst(); v != NULL; v = verts.getNext(v))
+		for (Vptr v = TopoCache::verts.getFirst(); v != NULL; v = TopoCache::verts.getNext(v))
 		{
 #ifdef _WIN32
 			Vec3d raw = mesh->verts[v->ref].pos;
